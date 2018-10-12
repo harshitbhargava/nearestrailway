@@ -1,0 +1,42 @@
+<!--
+  Generated template for the NrShomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>NRS-HOME</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid class="button-group">
+    <ion-row>
+      <ion-col><button ion-button block (click)="searchBetStations()">Search<br>Between Stations</button></ion-col>
+      <ion-col><button ion-button block (click)="getNearestStation()">Locate<br>Nearest Station</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button ion-button block (click)="getPNRStatus()">PNR Status</button></ion-col>
+      <ion-col><button ion-button block (click)="getLiveStatus()">Live Status</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button ion-button block (click)="getSeatAvailability()">Seat<br>Availability</button></ion-col>
+      <ion-col><button ion-button block (click)="getTrainSchedule()">Train<br>Schedule</button></ion-col>
+      <ion-col><button ion-button block (click)="getFare()">Fare<br>Enquiry</button></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><button ion-button block (click)="getSeatMap()">Seat<br>Map</button></ion-col>
+        <ion-col><button ion-button block (click)="enableWifi()">Enable<br>Wifi</button></ion-col>
+        <ion-col><button ion-button block (click)="viewHelplineNo()">Helpline<br>Number</button></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col><button ion-button block (click)="getTrainArrivals()">Train<br>Arrivals</button></ion-col>
+          <ion-col><button ion-button block (click)="viewCancelledTrains()">Cancelled<br>Trains</button></ion-col>
+          <ion-col><button ion-button block (click)="viewDivertedTrains()">Rescheduled<br>Trains</button></ion-col>
+        </ion-row>
+  </ion-grid>
+</ion-content>

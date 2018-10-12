@@ -1,0 +1,45 @@
+<!--
+  Generated template for the FareEnquiryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Fare Enquiry</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-input placeholder="Train Number" type="number" [(ngModel)]=tno></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Source:</ion-label>
+          <ion-input placeholder="Station Code" type="text" [(ngModel)]=scode></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Destination:</ion-label>
+            <ion-input placeholder="Station Code" type="text" [(ngModel)]=tcode></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button (click)="presentPopoverClass($event, classes)">{{className}}</button>
+        </ion-item>
+        <ion-item>
+          <button ion-button (click)="presentPopoverQuota($event, quota)">{{quotaName}}</button>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Age" type="number" [(ngModel)]=age></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button (click)="getFare()">Get Fare</button>
+        </ion-item> 
+        <div *ngIf="val">
+          Fare: Rs.{{fare}}
+        </div>
+        
+
+</ion-content>
