@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-input placeholder="Station Code" type="text"[(ngModel)]=code></ion-input>
+    <ion-input placeholder="Station Name" type="text"[(ngModel)]="code" (keydown)="onkeydown($event)"></ion-input>
   </ion-item>
   <div style="text-align: center">
       <button ion-button (click)="status()">Get Train Arrivals</button> 

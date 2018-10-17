@@ -48,6 +48,7 @@ export class SeatAvailabilityPage {
       .map(data => data.json()) // Instead of getting the _body manually, you can use the map method from RxJS
             .subscribe(data =>{
                 this.classes = data.trains[0].classes;
+                console.log(data.trains[0].classes);
              },error=>{
                  console.log(error);// Error getting the data
              });

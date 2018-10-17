@@ -15,12 +15,12 @@
 <ion-content padding>
   <ion-grid> 
     <ion-row padding="100px">
-      <input type="text" placeholder="From Station" [(ngModel)]="FromStation">
-      <button ion-button (click)="ok1()">ok1</button>
+      <input type="text" placeholder="From Station" [(ngModel)]=fcode (keydown)="onkeydown2($event,1)">
+      <!-- <button ion-button (click)="ok1()">ok1</button> -->
     </ion-row>
     <ion-row padding="100px">
-      <input type="text" placeholder="To Station" [(ngModel)]="ToStation">
-      <button ion-button (click)="ok2()">ok2</button>
+      <input type="text" placeholder="To Station" [(ngModel)]=tcode (keydown)="onkeydown2($event,2)">
+      <!-- <button ion-button (click)="ok2()">ok2</button> -->
     </ion-row>
     <ion-row>
       <button ion-button (click)="getTrains()">Submit</button>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, PopoverController, NavParams } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { StationcodePage } from '../stationcode/stationcode';
 /**
  * Generated class for the TrainArrivalsPage page.
  *
@@ -19,9 +20,43 @@ export class TrainArrivalsPage {
   code: any;
   val = false;
   arrivals:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  cnt;
+  arr: any= [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public popoverCtrl: PopoverController, public http: Http) {
+      this.cnt=0;
   }
-
+  onkeydown(event)
+  {
+    this.cnt++;
+    this.arr.push(event.key);
+    if(this.cnt==3)
+    {console.log(event);
+      this.cnt = 0;
+      let x = this.arr[0]+this.arr[1]+this.arr[2]
+    this.http.get('https://api.railwayapi.com/v2/suggest-station/name/'+x+'/apikey/a9tws7rvfg/')
+    .map(data => data.json()) // Instead of getting the _body manually, you can use the map method from RxJS
+    .subscribe(data =>{
+      console.log(data);
+        this.popoverCallStation(data.stations, event);
+     },error=>{
+         console.log(error);// Error getting the data
+     });
+    }
+  }
+  popoverCallStation(t, event)
+  {
+    this.arr = [];
+    let popover = this.popoverCtrl.create(StationcodePage, {
+      tr: t
+    });
+    popover.onDidDismiss(data => {
+      this.code = data;
+    });
+    popover.present({
+      ev: event
+    })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TrainArrivalsPage');
   }

@@ -15,15 +15,15 @@
 
 <ion-content padding>
     <ion-item>
-        <ion-input placeholder="Train Number" type="number" [(ngModel)]=tno></ion-input>
+        <ion-input placeholder="Train Name/No." type="text" [(ngModel)]=tno (keydown)="onkeydown1($event)"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label>Source:</ion-label>
-          <ion-input placeholder="Station Code" type="text" [(ngModel)]=scode></ion-input>
+          <ion-input placeholder="Station Name" type="text" [(ngModel)]=scode (keydown)="onkeydown2($event,1)"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Destination:</ion-label>
-            <ion-input placeholder="Station Code" type="text" [(ngModel)]=tcode></ion-input>
+            <ion-input placeholder="Station Name" type="text" [(ngModel)]=tcode (keydown)="onkeydown2($event,2)"></ion-input>
         </ion-item>
         <ion-item>
           <button ion-button (click)="presentPopoverClass($event, classes)">{{className}}</button>

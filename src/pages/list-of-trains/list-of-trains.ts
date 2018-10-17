@@ -20,8 +20,6 @@ import 'rxjs/add/operator/map';
   templateUrl: 'list-of-trains.html',
 })
 export class ListOfTrainsPage {
-  FromStation="";
-  ToStation="";
   fcode: string;
   tcode: string;
   className="SL"
@@ -31,10 +29,8 @@ export class ListOfTrainsPage {
   currDate = new Date();
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public http: Http) {
-      this.FromStation = navParams.get('data1');
-      this.ToStation = navParams.get('data2');
-      this.fcode = navParams.get('data3');
-      this.tcode = navParams.get('data4');
+      this.fcode = navParams.get('data1');
+      this.tcode = navParams.get('data2');
       let d: any = this.currDate.getDate();
       if(d<10)
         d = '0' + d;
