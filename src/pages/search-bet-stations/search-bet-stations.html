@@ -1,0 +1,31 @@
+<!--
+  Generated template for the SearchBetStationsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Find Trains</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-grid> 
+    <ion-row padding="100px">
+      <ion-input placeholder="From Station" [(ngModel)]=fcode (keydown)="onkeydown2($event,1)"></ion-input>
+      <!-- <button ion-button (click)="ok1()">ok1</button> -->
+    </ion-row>
+    <ion-row padding="100px">
+      <ion-input placeholder="To Station" [(ngModel)]=tcode (keydown)="onkeydown2($event,2)"></ion-input>
+      <!-- <button ion-button (click)="ok2()">ok2</button> -->
+    </ion-row>
+  
+        <div style="text-align: center">
+      <button ion-button (click)="getTrains()">Submit</button>
+      </div>
+
+  </ion-grid>
+</ion-content>

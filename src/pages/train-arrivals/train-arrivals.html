@@ -1,0 +1,42 @@
+<!--
+  Generated template for the TrainArrivalsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>TrainArrivals</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-input placeholder="Station Name" type="text"[(ngModel)]="code" (keydown)="onkeydown($event)"></ion-input>
+  </ion-item>
+  <div style="text-align: center">
+      <button ion-button (click)="status()">Get Train Arrivals</button> 
+  </div>
+  <div *ngIf="val">
+    <ion-list>
+      <ion-item *ngFor="let train of arrivals">
+        <ion-grid>
+          <ion-row>
+            <ion-col>{{train.number}} - {{train.name}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Sch Arr: {{train.actarr}}</ion-col>
+            <ion-col>Del Arr: {{train.delayarr}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Sch Dep: {{train.actdep}}</ion-col>
+            <ion-col>Del Dep: {{train.delaydep}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

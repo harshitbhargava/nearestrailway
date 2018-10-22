@@ -1,0 +1,20 @@
+<!--
+  Generated template for the StationcodePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>stationcode</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item  *ngFor="let item of station" (click)="close(item.code)">{{item.code}} {{item.name}}</ion-item>
+  </ion-list>
+</ion-content>

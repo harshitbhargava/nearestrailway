@@ -1,0 +1,7 @@
+{
+  "name": "NRS",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
